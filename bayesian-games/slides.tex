@@ -379,6 +379,114 @@
     }
 \end{frame}
 
+
+\begin{frame}{First-Price Auctions}
+    \begin{block}{Rules}
+        \begin{itemize}
+         \item All bidders simultaneously submit bids so that no bidder knows the bid of any other participant. 
+         \item The highest bidder pays the price that was submitted and wins the auction.
+         \end{itemize}
+    \end{block}
+\end{frame}
+
+
+\begin{frame}{First-Price Auctions example}
+    \only<1>{
+        \begin{itemize}
+            \item The auction house has a book for sale.
+            \item You can quote prices that are a multiple of 10 greater than 0. In the event of a tie, the winner is drawn by lot. 
+            \item Julek values the book at $\$28$, and Janek at $\$24$. 
+         \end{itemize}
+        What is the optimal bid value for each of them?
+    }
+
+    \only<2>{
+        Obviously, it is not profitable for \textcolor{blue}{Julek} and \textcolor{red}{Janek} to bid more than $\$28$ and $\$24$ respectively
+
+
+        \vspace{5mm}
+        
+        Pay-offs:
+        \begin{center}
+        \[
+            \begin{array}{c|c|c|}
+                \multicolumn{1}{c}{} & \multicolumn{1}{c}{\textcolor{red}{\textbf{10\$}}} & \multicolumn{1}{c}{\textcolor{red}{\textbf{20\$}}} \\
+                \hline
+                \textcolor{blue}{\textbf{10\$}} & & \\
+                \hline
+                \textcolor{blue}{\textbf{20\$}} & & \\
+                \hline
+            \end{array}
+        \]
+        \end{center}
+    }
+
+    \only<3>{
+        Pay-offs:
+        \begin{center}
+        \[
+            \begin{array}{c|c|c|}
+                \multicolumn{1}{c}{} & \multicolumn{1}{c}{\textcolor{red}{\textbf{10\$}}} & \multicolumn{1}{c}{\textcolor{red}{\textbf{20\$}}} \\
+                \hline
+                \textcolor{blue}{\textbf{10\$}} & & \textcolor{blue}{\$0}, \textcolor{red}{\$4} \\
+                \hline
+                \textcolor{blue}{\textbf{20\$}} & \textcolor{blue}{\$8}, \textcolor{red}{\$0} & \\
+                \hline
+            \end{array}
+        \]
+        \end{center}
+    }
+
+    \only<4>{
+        Pay-offs:
+        \begin{center}
+        \[
+            \begin{array}{c|c|c|}
+                \multicolumn{1}{c}{} & \multicolumn{1}{c}{\textcolor{red}{\textbf{10\$}}} & \multicolumn{1}{c}{\textcolor{red}{\textbf{20\$}}} \\
+                \hline
+                \textcolor{blue}{\textbf{10\$}} & \textcolor{blue}{\$9}, \textcolor{red}{\$7} & \textcolor{blue}{\$0}, \textcolor{red}{\$4} \\
+                \hline
+                \textcolor{blue}{\textbf{20\$}} & \textcolor{blue}{\$8}, \textcolor{red}{\$0} & \\
+                \hline
+            \end{array}
+        \]
+        \end{center}
+    }
+
+    \only<5>{
+        Pay-offs:
+        \begin{center}
+        \[
+            \begin{array}{c|c|c|}
+                \multicolumn{1}{c}{} & \multicolumn{1}{c}{\textcolor{red}{\textbf{10\$}}} & \multicolumn{1}{c}{\textcolor{red}{\textbf{20\$}}} \\
+                \hline
+                \textcolor{blue}{\textbf{10\$}} & \textcolor{blue}{\$9}, \textcolor{red}{\$7} & \textcolor{blue}{\$0}, \textcolor{red}{\$4} \\
+                \hline
+                \textcolor{blue}{\textbf{20\$}} & \textcolor{blue}{\$8}, \textcolor{red}{\$0} & \textcolor{blue}{\$4}, \textcolor{red}{\$2} \\
+                \hline
+            \end{array}
+        \]
+        \end{center}
+
+        \vspace{5mm}
+        
+        So \textcolor{blue}{Julek} should bid as much as he expects \textcolor{red}{Janek} to bid and vice versa.
+    }
+
+\end{frame}
+
+
+\begin{frame}{Second-Price Auctions}
+    \begin{block}{Rules}
+        The same as for first-price auctions, but the winner pays the \textbf{second} highest bid.
+    \end{block}
+
+    \begin{block}{Example}
+        If three participants A, B and C submit bids of 100, 80 and 120, C wins, but pays 100 (the second highest bid).
+    \end{block}
+\end{frame}
+
+
 \begin{frame}{Resources}
     \begin{itemize}
         \item \url{https://en.wikipedia.org/wiki/Bayesian_game}
