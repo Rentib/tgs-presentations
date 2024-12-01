@@ -30,27 +30,26 @@
 \begin{frame}
     \frametitle{Bayesian games - intuitive definition}
 
+    \only<1>{
     So far we have assumed that each player knows the payoff of other players. 
-    Ex. Prisoners dilema. We didn't know whether our colleague will cooperate with police, but we knew payoffs for all possibilities.
+    Ex. Prisoners dilemma. We didn't know whether our colleague will cooperate
+    with police, but we knew payoffs for all possibilities.
 
     \vspace{5mm}
 
-    Closer to real life are games with incomplete information (uncertanity about payoffs) called Bayesian Games.
+    Closer to real life are games with incomplete information (uncertainty about
+    payoffs) called Bayesian Games.
+    }
 
-\end{frame} 
-
-
-
-
-\begin{frame}
-    \frametitle{Bayesian games - intuitive definition}
-
+    \only<2>{
     In games with incomplete information we have
     \begin{itemize}
         \item Players
             \begin{itemize}
-                \item One player can have multiple types each having different payoffs
-                \item Player has probability assigned for each type of his opponent
+                \item One player can have multiple types each having different
+                    payoffs
+                \item Player has probability assigned for each type of his
+                    opponent
                 \item Player 2 knows that player 1 has beliefs. \\
                 Player 1 knows that player 2 knows that player 1 has beliefs. \\
                 Player 2 knows that player 1 knows that player 2 knows that player 1 has beliefs. \\
@@ -63,14 +62,15 @@
     \vspace{5mm}
 
     So in short, the difference is these types and beliefs about these types.
-\end{frame}
-
-
-\begin{frame}
-    \frametitle{Bayesian games - intuitive definition}
-
-    Bayesian game eliminates infinite loops in situations where players try to predict each other's thoughts. For instance, a player might think, ''If I expect $\textit{player B}$ to take a certain action, then $\textit{player B}$ will predict that I expect this action, so I need to predict $\textit{player B's}$ prediction,'' and so on. Bayesian games simplifies this by assigning probability weights to each outcome.
-
+    }
+    \only<3>{
+    Bayesian game eliminates infinite loops in situations where players try to
+    predict each other's thoughts. For instance, a player might think, "If
+    I expect $\textit{player B}$ to take a certain action, then $\textit{player
+    B}$ will predict that I expect this action, so I need to predict
+    $\textit{player B's}$ prediction", and so on. Bayesian games simplify this
+    by assigning probability weights to each outcome.
+    }
 \end{frame}
 
 
@@ -105,6 +105,7 @@
 \begin{frame}
     \frametitle{Example on Sheriff's dilemma}
 
+    \only<1>{
     \vspace{10mm}
     
     \begin{figure}
@@ -118,29 +119,18 @@
         \centering
         \includegraphics[width=0.5\textwidth]{assets/gunfight.jpg}
     \end{figure}
+    }
     
-\end{frame} 
-
-
-\begin{frame}
-    \frametitle{Example on Sheriff's dilemma}
-
-    
+    \only<2>{
     \begin{figure}
         \centering
         \includegraphics[width=0.8\textwidth]{assets/sheriff2.jpg}
     \end{figure}
 
     \vspace{5mm}
+    }
     
-\end{frame} 
-
-
-
-\begin{frame}
-    \frametitle{Example on Sheriff's dilemma}
-
-    
+    \only<3>{
     \begin{figure}
         \centering
         \includegraphics[width=1.0\textwidth]{assets/sheriff3.png}
@@ -154,8 +144,8 @@
     $$-2 \cdot p + 0 \cdot (1-p) = -2p$$
 
     Therefore, sheriff should shoot only when 
-    $$ p-1 > -2p $$
-    $$ p > \frac{1}{3} $$
+    $$ p-1 > -2p \qquad\qquad p > \frac{1}{3} $$
+    }
     
 \end{frame} 
 
@@ -208,6 +198,7 @@
 \begin{frame}
     \frametitle{Impact of Asymmetric Information on the Market}
 
+    \only<1>{
     \begin{itemize}
         \item There are two cars:
         \begin{itemize}
@@ -219,36 +210,24 @@
         \item As a result, the average quality and price in the market decrease.
         \item This cycle repeats until buyers only want cars for free.
     \end{itemize}
+    }
     
-\end{frame}
-
-
-
-\begin{frame}
-    \frametitle{Impact of Asymmetric Information on the Market}
-
+    \only<2>{
     \begin{figure}
         \centering
         \includegraphics[width=0.6\textwidth]{assets/cycle_of_market.png}
     \end{figure}
 
-
-    In Poland, nearly twice as many used cars are sold as new ones, so there are, of course, ways to deal with this problem, such as warranties.
-
-    
+    In Poland, nearly twice as many used cars are sold as new ones, so there
+    are, of course, ways to deal with this problem, such as warranties.
+    }
 \end{frame}
 
-
-
-\begin{frame}
-
-    Resources:
+\begin{frame}{Resources}
     \begin{itemize}
         \item \url{https://en.wikipedia.org/wiki/Bayesian_game}
         \item \url{https://www.ehu.eus/iaguirre/Chapter\%201.\%20Bayesian\%20Games\%20in\%20Normal\%20Form.pdf}
     \end{itemize}
-    
 \end{frame}
-
 
 \end{document}
