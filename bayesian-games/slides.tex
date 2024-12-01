@@ -5,7 +5,14 @@
 \usepackage[utf8]{inputenc}
 \usepackage{mathtools}                       % matma
 \usepackage{amsfonts,amsmath,amssymb,amsthm} % matma
+\usepackage{xcolor}                          % kolory
+\usepackage{tikz}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{multirow}
 
+\renewcommand{\arraystretch}{1.5}
 
 \title{Bayesian games}
 \author{Stanisław Bitner, Aleksander Wojsz}
@@ -220,6 +227,155 @@
 
     In Poland, nearly twice as many used cars are sold as new ones, so there
     are, of course, ways to deal with this problem, such as warranties.
+    }
+\end{frame}
+
+\begin{frame}{Bayesian Nash Equilibrium}
+    \begin{block}{Definition}
+        A \only<1>{B}\only<2>{\textcolor{red}{B}}NE is a set of strategies, one
+        for each \only<1>{type of}\only<2>{\textcolor{red}{type of}} player,
+        such that no type has incentive to change his or her strategy given
+        \only<1>{the beliefs about the types}\only<2>{\textcolor{red}{the
+        beliefs about the types}} and what the other types are doing.
+    \end{block}
+\end{frame}
+
+\begin{frame}{BNE -- Example}
+    \only<1>{
+        Consider a game with 2 players.\\
+        Player 1 may be either type a or type b.\\
+        Player 2 is always of one type.
+    }
+
+    \only<2-3>{
+        \begin{columns}
+            \column{0.5\textwidth}
+            \begin{center}
+                \textcolor{blue}{\textbf{a type}} = $p$\\
+                \uncover<2-3>{
+                    \[
+                        \begin{array}{c|c|c|}
+                            \multicolumn{1}{c}{} & \multicolumn{1}{c}{\textcolor{red}{\textbf{Left}}} & \multicolumn{1}{c}{\textcolor{red}{\textbf{Right}}} \\
+                            \hline
+                            \textcolor{blue}{\textbf{Up}} & \textcolor{blue}{3}, \textcolor{red}{4} & \textcolor{blue}{1}, \textcolor{red}{0} \\
+                            \hline
+                            \textcolor{blue}{\textbf{Down}} & \textcolor{blue}{4}, \textcolor{red}{3} & \textcolor{blue}{2}, \textcolor{red}{0} \\
+                            \hline
+                        \end{array}
+                    \]
+                }
+            \end{center}
+            \column{0.5\textwidth}
+            \begin{center}
+                \textcolor{blue}{\textbf{a type}} = $1 - p$\\
+                \uncover<3-3>{
+                    \[
+                        \begin{array}{c|c|c|}
+                            \multicolumn{1}{c}{} & \multicolumn{1}{c}{\textcolor{red}{\textbf{Left}}} & \multicolumn{1}{c}{\textcolor{red}{\textbf{Right}}} \\
+                            \hline
+                            \textcolor{blue}{\textbf{Up}} & \textcolor{blue}{6}, \textcolor{red}{2} & \textcolor{blue}{0}, \textcolor{red}{4} \\
+                            \hline
+                            \textcolor{blue}{\textbf{Down}} & \textcolor{blue}{5}, \textcolor{red}{1} & \textcolor{blue}{-1}, \textcolor{red}{4} \\
+                            \hline
+                        \end{array}
+                    \]
+                }
+            \end{center}
+        \end{columns}
+    }
+
+    \only<4-5>{
+        \begin{center}
+            \textcolor{blue}{\textbf{a type}} = $p$\\
+            \[
+                \begin{array}{c|c|c|}
+                    \multicolumn{1}{c}{} & \multicolumn{1}{c}{\textcolor{red}{\textbf{Left}}} & \multicolumn{1}{c}{\textcolor{red}{\textbf{Right}}} \\
+                    \hline
+                    \textcolor{blue}{\textbf{Up}} & \textcolor{blue}{3}, \textcolor{red}{4} & \textcolor{blue}{1}, \textcolor{red}{0} \\
+                    \hline
+                    \textcolor{blue}{\textbf{Down}} & 
+                    \only<4>{\textcolor{blue}{4}}\only<5->{\fbox{\textcolor{blue}{4}}}, \textcolor{red}{3} &
+                    \only<4>{\textcolor{blue}{2}}\only<5->{\fbox{\textcolor{blue}{2}}}, \textcolor{red}{0} \\
+                    \hline
+                \end{array}
+            \]
+        \end{center}
+    }
+
+    \only<6-7>{
+        \begin{center}
+            \textcolor{blue}{\textbf{a type}} = $1 - p$\\
+            \[
+                \begin{array}{c|c|c|}
+                    \multicolumn{1}{c}{} & \multicolumn{1}{c}{\textcolor{red}{\textbf{Left}}} & \multicolumn{1}{c}{\textcolor{red}{\textbf{Right}}} \\
+                    \hline
+                    \textcolor{blue}{\textbf{Up}} &
+                    \only<6>{\textcolor{blue}{6}}\only<7>{\fbox{\textcolor{blue}{6}}}, \textcolor{red}{2} &
+                    \only<6>{\textcolor{blue}{0}}\only<7>{\fbox{\textcolor{blue}{0}}}, \textcolor{red}{4} \\
+                    \hline
+                    \textcolor{blue}{\textbf{Down}} & \textcolor{blue}{5}, \textcolor{red}{1} & \textcolor{blue}{-1}, \textcolor{red}{4} \\
+                    \hline
+                \end{array}
+            \]
+        \end{center}
+    }
+
+
+    \only<8-13>{
+        \begin{columns}
+            \column{0.5\textwidth}
+            \begin{center}
+                \textcolor{blue}{\textbf{a type}} = $p$\\
+                \[
+                    \begin{array}{c|c|c|}
+                        \multicolumn{1}{c}{} & \multicolumn{1}{c}{\textcolor{red}{\textbf{Left}}} & \multicolumn{1}{c}{\textcolor{red}{\textbf{Right}}} \\
+                        \hline
+                        \textcolor{blue}{\textbf{Up}} & \textcolor{blue}{3}, \textcolor{red}{4} & \textcolor{blue}{1}, \textcolor{red}{0} \\
+                        \hline
+                        \textcolor{blue}{\textbf{Down}} & \fbox{\textcolor{blue}{4}}, \textcolor{red}{3} & \fbox{\textcolor{blue}{2}}, \textcolor{red}{0} \\
+                        \hline
+                    \end{array}
+                \]
+            \end{center}
+            \column{0.5\textwidth}
+            \begin{center}
+                \textcolor{blue}{\textbf{a type}} = $1 - p$\\
+                \[
+                    \begin{array}{c|c|c|}
+                        \multicolumn{1}{c}{} & \multicolumn{1}{c}{\textcolor{red}{\textbf{Left}}} & \multicolumn{1}{c}{\textcolor{red}{\textbf{Right}}} \\
+                        \hline
+                        \textcolor{blue}{\textbf{Up}} & \fbox{\textcolor{blue}{6}}, \textcolor{red}{2} & \fbox{\textcolor{blue}{0}}, \textcolor{red}{4} \\
+                        \hline
+                        \textcolor{blue}{\textbf{Down}} & \textcolor{blue}{5}, \textcolor{red}{1} & \textcolor{blue}{-1}, \textcolor{red}{4} \\
+                        \hline
+                    \end{array}
+                \]
+            \end{center}
+        \end{columns}
+        \uncover<9-13>{
+        \begin{block}{Utility}
+            \begin{center}
+                \uncover<10-13>{$ u(\text{left}) = p \cdot 3 + (1 - p) \cdot 2              $\\}
+                \uncover<11-13>{$ u(\text{right}) = p \cdot 0 + (1 - p) \cdot 4             $\\}
+                \uncover<12-13>{$ p \cdot 3 + (1 - p) \cdot 2 > p \cdot 0 + (1 - p) \cdot 4 $\\}
+                \uncover<13-13>{$ 3p + 2 - 2p > 4 - 4p                                      $\\}
+                \uncover<13-13>{$ p > 2/5                                                   $\\}
+            \end{center}
+        \end{block}
+        }
+    }
+
+    \only<14>{
+        \begin{itemize}
+            \item Player 1, a type chooses down;
+            \item Player 1, b type chooses up;
+            \item Player 2 chooses:
+                \begin{itemize}
+                    \item if $p > 2/5$ -- left;
+                    \item if $p = 2/5$ -- left or right;
+                    \item if $p < 2/5$ -- right.
+                \end{itemize}
+        \end{itemize}
     }
 \end{frame}
 
